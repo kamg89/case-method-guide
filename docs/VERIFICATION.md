@@ -14,7 +14,7 @@ Verified October 24, 2026. The automated checks and production build pass. The p
 
 ## Duration
 
-The authoring budget is 3 + 7 + 4 + 7 + 6 + 5 + 6 + 4 = **42 minutes**. A structured pacing review assigns time to reading, calculations, written responses, comparisons and reflection. There is no countdown or minimum time gate. The short pages do not add work beyond the eight stages.
+The authoring budget is 3 + 8 + 5 + 7 + 6 + 4 + 6 + 4 = **43 minutes**. A structured pacing review assigns time to reading, calculations, written responses, comparisons and reflection. There is no countdown or minimum time gate. The short pages do not add work beyond the eight stages.
 
 The mechanical browser walkthrough verifies function, not learner thinking speed. **Actual learner timing is unvalidated until piloted.** Pilot with MBA and EMBA learners, record elapsed/visible estimates alongside participant feedback, and revise the text or prompts if typical completion falls outside 30–45 minutes. Do not represent the suggested duration as a measured student result.
 
@@ -25,3 +25,13 @@ Credential possession is not identity verification. Client activity is an estima
 ## Lesson revision 2
 
 The landing page now names the case method explicitly and contains only a definition, purpose and start action, with quiet utility links. The case preview and marketing sections were removed. The lesson adds an opening contribution, more plausible alternatives with choice-specific feedback, more demanding evidence/criteria prompts, and a discussion-preparation checklist. Existing database records and schema are unchanged; a read-only check found no live attempts before the version change.
+
+## Lesson revision 3
+
+The lesson begins by defining a case, explaining what case learning does, and showing the route through the exercise. It asks no academic question in the introduction. Students read the complete seven-part narrative and exhibits before describing the decision maker, choice and stakes. They frame the decision before recording an initial position. The second-reading strategy check now appears in the closing review.
+
+The case is a 949-word original narrative centered on Dave Gilboa. Its decision review is an explicitly labeled instructional construction. Each narrative page contains 131–142 words. Exhibit 3 presents competing proposals rather than supplying an analysis template. Page transition buttons name the next stage.
+
+Regression checks verify this sequence and that the initial-position lock occurs after decision framing, in both the interface and server. The lesson version is `warby-2024-v3`. A read-only check found no live attempts before this revision. No SQL migration is needed.
+
+Revision 3 verification passed: 36 automated tests, production build, a complete browser walkthrough, saved-page/response recovery after reload, and the live API suite with incremental stage responses. The live check confirms that students can enter their first position after reading and that the server rejects later changes to that preserved position. Synthetic test records were deleted. The revised opening was reviewed at desktop and 390 px widths.

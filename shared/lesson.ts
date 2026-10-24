@@ -1,13 +1,14 @@
-export const LESSON_VERSION = 'warby-2024-v2';
+export const LESSON_VERSION = 'warby-2024-v3';
+export const INITIAL_POSITION_STAGE = 2;
 export const stages = [
-  ['Study a case','What makes case preparation useful?',3],
-  ['Enter the case','Where should growth come from?',7],
-  ['Frame the decision','Ask a question you can act on',4],
-  ['Examine the evidence','What do the facts support?',7],
-  ['Compare choices','Make the trade-off visible',6],
-  ['Challenge your argument','Give the objection a fair hearing',5],
-  ['Prepare for discussion','Make your reasoning available for discussion',6],
-  ['Debrief and finish','What changed in your thinking?',4],
+  ['What is a case?','Understand the material and the method',3],
+  ['Read the case','Meet the decision maker and understand the situation',8],
+  ['Find the decision','Turn the situation into a question',5],
+  ['Work with evidence','Separate what is known from what is inferred',7],
+  ['Compare the options','Decide what matters and weigh the alternatives',6],
+  ['Test your argument','Respond to a serious objection',4],
+  ['Join the discussion','Prepare a contribution and respond to others',6],
+  ['Take stock','Review what you learned and finish',4],
 ] as const;
 export const choices = [
   ['stores','Prioritize selective store expansion','Build access to fitting and eye exams in carefully chosen markets.'],
@@ -64,14 +65,14 @@ export const checks = {
  }}
 } as const;
 export const required:Record<number,Record<string,number>> = {
- 0:{orientation:1,privacy:1},
- 1:{initial:1,initialReason:45,initialConfidence:1},
- 2:{decision:70,constraint:40,scenario:1},
+ 0:{privacy:1},
+ 1:{firstRead:70},
+ 2:{decision:70,constraint:40,scenario:1,initial:1,initialReason:45,initialConfidence:1},
  3:{e1:1,e2:1,e3:1,e4:1,e5:1,e6:1,revenueGrowth:1,storeGrowth:1,limits:65,evidenceRef:1},
  4:{criteria:50,storesCase:45,digitalCase:45,stagedCase:45,recommendation:1,tradeoff:65},
  5:{objection:80,revisionReason:60,finalChoice:1,finalConfidence:1},
  6:{opening:90,discussionMove:1,discussionReply:90,discussionReflect:45},
- 7:{transfer:1,reflection:100,aiUse:1,debriefRead:1},
+ 7:{orientation:1,transfer:1,reflection:100,aiUse:1,debriefRead:1},
 };
 export function validateStage(stage:number,a:Answers):string[]{
  const issues:string[]=[];
@@ -79,13 +80,13 @@ export function validateStage(stage:number,a:Answers):string[]{
  const enums:Record<string,string[]>={orientation:checks.orientation.options.map(x=>x[0]),privacy:['yes'],initial:choices.map(x=>x[0]),scenario:['decision','evaluation','diagnosis'],recommendation:choices.map(x=>x[0]),finalChoice:choices.map(x=>x[0]),discussionMove:checks.discussionMove.options.map(x=>x[0]),transfer:checks.transfer.options.map(x=>x[0]),aiUse:['none','used'],debriefRead:['yes']};
  for(const key of Object.keys(required[stage]||{})) if(enums[key]&&!enums[key].includes(a[key])) issues.push(key);
  if(stage===3){for(const e of evidence)if(!['fact','interpretation','assumption'].includes(a[e.id]))issues.push(e.id);for(const k of ['revenueGrowth','storeGrowth']) if(!a[k]||!Number.isFinite(Number(a[k]))||Number(a[k])< -100||Number(a[k])>1000)issues.push(k);if(!['Exhibit 1','Exhibit 2','Exhibit 3'].includes(a.evidenceRef))issues.push('evidenceRef');}
- if(stage===1||stage===5){const k=stage===1?'initialConfidence':'finalConfidence';if(!['1','2','3','4','5'].includes(a[k]))issues.push(k);}
+ if(stage===2||stage===5){const k=stage===2?'initialConfidence':'finalConfidence';if(!['1','2','3','4','5'].includes(a[k]))issues.push(k);}
  if(stage===7&&a.aiUse==='used'&&(!a.aiDetails||a.aiDetails.trim().length<40))issues.push('aiDetails');
  return [...new Set(issues)];
 }
 export function validAnswers(value:unknown):value is Answers {return !!value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).length<=60&&Object.entries(value).every(([k,v])=>/^[a-zA-Z][a-zA-Z0-9]*$/.test(k)&&typeof v==='string'&&v.length<=6000);}
 export function readyToSubmit(a:Answers,checkpoints:number[]){return stages.every((_,i)=>checkpoints.includes(i)&&validateStage(i,a).length===0);}
-export const responseLabels:Record<string,string>={orientation:'Reading strategy',initial:'Initial choice',initialReason:'Initial reasoning',initialConfidence:'Initial confidence',decision:'Decision question',constraint:'Constraint and uncertainty',scenario:'Case type',revenueGrowth:'Revenue growth %',storeGrowth:'Store growth %',limits:'Limits of the numbers',evidenceRef:'Evidence reference',criteria:'Decision criteria',storesCase:'Case for stores',digitalCase:'Case for digital',stagedCase:'Case for staged investment',recommendation:'Recommendation',tradeoff:'Trade-off',objection:'Response to objection',revisionReason:'Reason for revision or defense',finalChoice:'Final choice',finalConfidence:'Final confidence',opening:'Opening contribution',discussionMove:'Discussion move',discussionReply:'Discussion contribution',discussionReflect:'What the discussion added',transfer:'Transfer check',reflection:'Final reflection',aiUse:'AI assistance',aiDetails:'AI disclosure'};
+export const responseLabels:Record<string,string>={firstRead:'First reading: person, decision and stakes',orientation:'Reading strategy',initial:'Initial choice',initialReason:'Initial reasoning',initialConfidence:'Initial confidence',decision:'Decision question',constraint:'Constraint and uncertainty',scenario:'Case type',revenueGrowth:'Revenue growth %',storeGrowth:'Store growth %',limits:'Limits of the numbers',evidenceRef:'Evidence reference',criteria:'Decision criteria',storesCase:'Case for stores',digitalCase:'Case for digital',stagedCase:'Case for staged investment',recommendation:'Recommendation',tradeoff:'Trade-off',objection:'Response to objection',revisionReason:'Reason for revision or defense',finalChoice:'Final choice',finalConfidence:'Final confidence',opening:'Opening contribution',discussionMove:'Discussion move',discussionReply:'Discussion contribution',discussionReflect:'What the discussion added',transfer:'Transfer check',reflection:'Final reflection',aiUse:'AI assistance',aiDetails:'AI disclosure'};
 for(const item of evidence)responseLabels[item.id]=`Evidence: ${item.text}`;
 export function choiceLabel(key:string){return choices.find(x=>x[0]===key)?.[1]||key;}
 export function feedbackFor(stage:number,a:Answers){

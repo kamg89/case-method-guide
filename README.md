@@ -40,4 +40,4 @@ GitHub Actions runs the tests and production build before deploying `dist/` to G
 - `tests/`: validation, real Postgres behavior through PGlite, API authorization and deployment isolation.
 - `scripts/test-api.mjs`: opt-in live checks using disposable synthetic records.
 
-Designed for about 42 minutes. Actual learner timing remains unvalidated until piloted. This is an independent instructional exercise, with no affiliation with Harvard or Warby Parker. Fonts are distributed under their licenses in `public/licenses/`.
+Designed for about 43 minutes. Actual learner timing remains unvalidated until piloted. This is an independent instructional exercise, with no affiliation with Harvard or Warby Parker. Fonts are distributed under their licenses in `public/licenses/`.

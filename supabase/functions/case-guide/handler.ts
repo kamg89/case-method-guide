@@ -1,4 +1,4 @@
-import { LESSON_VERSION, readyToSubmit, validAnswers, validateStage } from '../../../shared/lesson.ts';
+import { LESSON_VERSION, INITIAL_POSITION_STAGE, readyToSubmit, validAnswers, validateStage } from '../../../shared/lesson.ts';
 const origins = new Set(['https://kamg89.github.io','http://127.0.0.1:4173','http://localhost:4173']);
 export async function hash(s:string){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))).map(x=>x.toString(16).padStart(2,'0')).join('');}
 function secret(){return Array.from(crypto.getRandomValues(new Uint8Array(24))).map(x=>x.toString(16).padStart(2,'0')).join('');}
@@ -45,7 +45,7 @@ export function makeHandler(db:any){return async(req:Request)=>{
    }
    check(a.lesson_version===LESSON_VERSION,'This attempt uses an older lesson. Contact your instructor.',409);
    if(b.action==='save'){
-    check(validAnswers(b.responses),'Invalid response data.');if(a.checkpoints.includes(1))for(const k of ['initial','initialReason','initialConfidence'])check(b.responses[k]===a.responses[k],'Your first judgment is preserved after its checkpoint. Revise your position in the later stages.');check(Number.isInteger(b.stage)&&b.stage>=0&&b.stage<8,'Invalid stage.');check(Number.isInteger(b.revision)&&b.revision>=0,'Invalid revision.');
+    check(validAnswers(b.responses),'Invalid response data.');if(a.checkpoints.includes(INITIAL_POSITION_STAGE))for(const k of ['initial','initialReason','initialConfidence'])check(b.responses[k]===a.responses[k],'Your first judgment is preserved after its checkpoint. Revise your position in the later stages.');check(Number.isInteger(b.stage)&&b.stage>=0&&b.stage<8,'Invalid stage.');check(Number.isInteger(b.revision)&&b.revision>=0,'Invalid revision.');
     check(b.stage<=Math.max(-1,...a.checkpoints)+1,'Complete the preceding stage first.');
     const checkpoint=b.checkpoint===true;const submit=b.submit===true;
     if(checkpoint)check(validateStage(b.stage,b.responses).length===0,'Complete the required fields before continuing.');

@@ -1,29 +1,56 @@
 export const sourceUrl='https://www.sec.gov/Archives/edgar/data/1504776/000150477624000006/wrby-20231231.htm';
+export const caseTitle = 'The next dollar of growth';
+export const caseNote = 'An original teaching case based on public information available on March 1, 2024. Dave Gilboa and Neil Blumenthal are real co-founders and co-CEOs at that date. The investment review, proposals, and decision agenda are constructed for this exercise, not a report of an actual meeting or their private views. No dialogue is attributed to them.';
 export const caseSections = [
- {title:'An investment decision',paragraphs:[
- 'It is March 1, 2024. Imagine that you are advising Warby Parker on where to direct its next increment of growth investment. The company sells eyewear through stores and digital channels. Your task is to recommend an investment priority, explain the evidence behind it, and identify what would make you change course. This advisory assignment is an instructional scenario. It is not an account of an actual board meeting or a request made by the company.',
- 'The question is deliberately narrower than whether stores or websites are good businesses. Warby Parker already operates both. You must decide which activity deserves greater emphasis now, given the relationship between the channels and the limits of the evidence. A recommendation to invest everywhere would avoid the central choice unless you explain the sequence, the allocation principle, and what must wait.'
- ]},
- {title:'Growth with an unfinished profit story',paragraphs:[
- "The company's reported results offer reasons for both confidence and caution. Net revenue increased from $598.1 million in 2022 to $669.8 million in 2023. Its year-end store count rose from 200 to 237. Gross profit increased, but gross margin declined from 57.0% to 54.5%. The net loss narrowed from $110.4 million to $63.2 million. Exhibit 1 puts these measures together. A larger business and a smaller loss are meaningful developments. Neither, on its own, establishes the return on the next investment.",
- 'The measures answer different questions. Revenue records sales. Gross margin concerns the amount left after the cost of those sales, before other operating expenses. Net income includes a broader set of expenses. Store count describes a footprint at a point in time. A claim about attractive new-store economics cannot be established merely by placing a rising revenue line beside a rising store-count line. That claim needs information about costs, timing, customer behavior, and what would have happened without the new location.'
- ]},
- {title:'A customer journey across channels',paragraphs:[
- 'A shopper might research frames online, try them in a store, and later complete a purchase online. Another might start with an eye exam in a store. Warby Parker reports that customers move across its physical and digital channels. At the end of 2023, 194 of its 237 stores offered in-person eye exams. These are reported features of the business. They do not tell us how much incremental demand any particular store or digital improvement creates.',
- 'For a store advocate, a location can do more than process transactions. It can reduce uncertainty about fit, make services convenient, and give customers a place to seek help. Those mechanisms could support differentiation. They also require execution. The existence of a store does not guarantee that its service is valuable enough to justify its costs. A digital advocate can make a parallel argument about convenience and reach, while still needing evidence that acquisition spending and experience improvements produce profitable customer relationships.'
- ]},
- {title:'What a channel comparison leaves out',paragraphs:[
- 'A simple channel ranking risks assigning credit to the place where a transaction ends rather than to the activities that helped generate it. If someone visits a store and later orders online, treating that order as an exclusively digital success may mislead the decision. The opposite error is possible too: a store purchase may follow substantial online research. The useful question is how an investment changes the customer journey and total economics, not which channel receives the final sales label.',
- 'The public information supplied here does not provide a controlled comparison of the next store against the next digital project. You have no matched-market experiment, complete acquisition-cost model, or forecast for a particular site. That absence does not make analysis impossible. It changes the strength of the claims you can defend. You can identify a plausible mechanism, show why existing evidence is consistent with it, and state the additional evidence needed before a larger commitment.'
- ]},
- {title:'Three possible priorities',paragraphs:[
- 'One option is selective store expansion. This recommendation would put greater emphasis on locations where fitting, service, and eye exams appear likely to strengthen the customer proposition. It needs a disciplined location argument and a way to assess incremental demand. Growth in the network is not itself a sufficient investment criterion. You would need to explain when a proposed location should be rejected, even if opening it would increase reported sales.',
- "A second option is to prioritize the digital experience and customer acquisition. This recommendation would focus on improving discovery, conversion, and repeat purchasing. It needs a specific account of the customer problem being solved and the return the company should measure. Digital spending is not automatically flexible or productive simply because it does not require a new storefront. An unsuccessful campaign can consume resources, and a convenient website may still fail to resolve a customer's need for physical service.",
- "A third option is staged investment. The company could run bounded tests before increasing its commitment. This approach can reduce uncertainty, but it has costs: slower expansion, management attention, and the risk that an inconclusive pilot delays a useful decision. A credible staged recommendation specifies a test, a decision threshold, and a consequence. \"Do a bit of everything\" is not a substitute for those choices."
- ]},
- {title:'Your recommendation',paragraphs:[
- 'Use the exhibits to form a position. Choose criteria that reflect the strategic question, such as customer value, incremental economics, capability fit, and reversibility. Explain why your preferred option performs well enough against those criteria, and give the strongest alternative a fair hearing. Name the cost or opportunity you are willing to accept. You may change your recommendation as you work through the exercise. The point is to see whether your reasoning improves when another person challenges it.'
- ]},
+  {
+    "title": "The next investment",
+    "paragraphs": [
+      "On March 1, 2024, Dave Gilboa had two sets of numbers to reconcile. Warby Parker, the eyewear company he had co-founded and led with Neil Blumenthal, had ended 2023 with 237 stores, 37 more than a year earlier. It had also recorded a net loss of $63.2 million. The business was growing, but the question of where to put the next dollar had become harder to answer.",
+      "At the next investment review, Gilboa would need a priority that he and Blumenthal could defend. Additional stores would bring fitting and eye exams closer to more customers. Digital improvements could help the company get more from the business it already had. A limited test of both would preserve room to change direction, but postpone a larger commitment. Each proposal promised growth. Each would leave something else waiting."
+    ]
+  },
+  {
+    "title": "Making eyewear easier to buy",
+    "paragraphs": [
+      "Warby Parker had begun selling glasses online in 2010. Its Home Try-On program addressed a practical obstacle: customers wanted to see how frames looked and felt before buying them. They could select five frames and try them at home for five days. The first permanent store followed in 2013. By the end of 2023, the company operated a network across the United States and Canada.",
+      "The different ways of shopping addressed different customer needs. A returning buyer might know the frame and prescription they wanted. Someone choosing glasses for the first time might need help with fit, an adjustment, or an eye exam. Making the purchase convenient meant more than making a checkout page easier to use. For Gilboa, the investment question concerned which of those needs deserved the next commitment of resources."
+    ]
+  },
+  {
+    "title": "The financial position",
+    "paragraphs": [
+      "Revenue had risen from $598.1 million in 2022 to $669.8 million in 2023. Gross profit increased from $341.1 million to $365.2 million, while gross margin fell from 57.0% to 54.5%. The annual net loss was smaller than the previous year's $110.4 million. Exhibit 1 set out a business with higher sales and a narrowing loss, but less gross profit for each dollar of revenue.",
+      "Those results gave the investment review competing pressures. Slowing expansion could forgo customers the company was equipped to serve. Further commitments would need to earn their place in a business that remained unprofitable. The aggregate figures did not separate the return from a newly opened location from the performance of an established store or a digital initiative. A larger footprint and higher revenue could support confidence in the direction of the business without settling the next allocation."
+    ]
+  },
+  {
+    "title": "The case for being nearby",
+    "paragraphs": [
+      "By year end, 194 stores offered in-person eye exams. Management described stores as a means of building awareness and acquiring customers. A location could introduce the brand to someone who had never visited its website, offer help choosing frames, and provide a reason to return. For the store proposal, the opportunity was to make that service available in additional markets.",
+      "The commitment would extend beyond opening the doors. A location needed premises, people, and reliable service. A strong result in an established market would not guarantee a similar result elsewhere. Some visitors might otherwise have bought online; others might become customers only because a store was nearby. In the review, the appeal of a new location would depend on which kind of demand it could attract and whether that demand justified the continuing costs."
+    ]
+  },
+  {
+    "title": "Getting more from the existing network",
+    "paragraphs": [
+      "The digital proposal began with a different opportunity. Customers did not necessarily stay in one channel. They could research frames online and buy in a store, or visit a store and later order online. Warby Parker offered virtual tools as well as physical service. An improvement before or after the store visit could therefore matter to the whole purchase, even if the transaction appeared in only one channel's sales.",
+      "The proposal would give priority to helping customers find suitable frames, move between services, and return for another purchase. It would use the existing network while the company improved the experience around it. Its attraction depended on the problem being solved. An easier digital journey could help a customer who knew what they needed. It might do less for someone whose main obstacle was the lack of a nearby exam or fitting service."
+    ]
+  },
+  {
+    "title": "A smaller commitment first",
+    "paragraphs": [
+      "A staged proposal would narrow the immediate commitment. A small set of store and digital initiatives could be compared before the company backed a broader program. Gilboa would retain the ability to redirect spending if early results challenged the original expectations. The proposal also left open a difficult question: whether a limited test could reveal enough about demand in other markets to guide the larger decision.",
+      "Waiting carried its own cost. A worthwhile location might no longer be available after a test, and an improvement delayed across the network would reach fewer customers in the meantime. Running several initiatives would also consume management attention. The staged proposal needed an end point. Without a clear decision to follow the results, a pilot could become another continuing activity competing for the same resources."
+    ]
+  },
+  {
+    "title": "A priority for the review",
+    "paragraphs": [
+      "The three proposals were now ready for comparison in Exhibit 3. None required Warby Parker to abandon a channel. They differed in what would receive attention first and what would have to wait. Gilboa needed to connect that priority to the customer experience the company wanted to provide and to a credible path toward better economics.",
+      "The material available for this review contained company results and a description of the business, but no comparable forecast for the next store and the next digital project. It could support a direction without resolving every investment detail. Gilboa would have to decide which uncertainty he was willing to accept, what further evidence he needed before a larger commitment, and when delay would cost more than it taught him. What priority should he take into the review?"
+    ]
+  }
 ];
 export const challenge:Record<string,{voice:string;text:string;guide:string}>={
  stores:{voice:'An objection from a finance perspective',text:'You have shown that the network grew, but not that another store will create enough new demand to cover its commitments. How will you distinguish an attractive location from sales that simply move between channels?',guide:'A strong response names an incremental measure, a comparison, and a condition under which you would stop expansion.'},

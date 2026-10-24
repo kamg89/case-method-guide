@@ -5,7 +5,7 @@ export function fullAnswers():Answers {const a:Answers={};for(const fields of Ob
 describe('completion contract',()=>{
  it('requires every stage and meaningful fields',()=>{const a=fullAnswers();expect(readyToSubmit(a,[0,1,2,3,4,5,6,7])).toBe(true);expect(readyToSubmit(a,[0,1,2,3,4,5,6])).toBe(false);expect(validateStage(7,{...a,reflection:'ok'})).toContain('reflection');});
  it('requires an AI description only when assistance was used',()=>{const a=fullAnswers();expect(validateStage(7,{...a,aiUse:'used'})).toContain('aiDetails');expect(validateStage(7,{...a,aiUse:'used',aiDetails:'Used a language model to critique my reasoning; checked every figure against Exhibit 1.'})).toEqual([]);});
- it('rejects forged enums and nonfinite numbers',()=>{const a=fullAnswers();expect(validateStage(3,{...a,revenueGrowth:'NaN',e1:'yes'})).toEqual(expect.arrayContaining(['revenueGrowth','e1']));expect(validateStage(0,{...a,privacy:'no'})).toContain('privacy');expect(validateStage(1,{...a,initialConfidence:'100'})).toContain('initialConfidence');});
+ it('rejects forged enums and nonfinite numbers',()=>{const a=fullAnswers();expect(validateStage(3,{...a,revenueGrowth:'NaN',e1:'yes'})).toEqual(expect.arrayContaining(['revenueGrowth','e1']));expect(validateStage(0,{...a,privacy:'no'})).toContain('privacy');expect(validateStage(2,{...a,initialConfidence:'100'})).toContain('initialConfidence');});
  it('bounds payloads',()=>{expect(validAnswers({a:'ok'})).toBe(true);expect(validAnswers({a:{inject:true}})).toBe(false);expect(validAnswers({a:'x'.repeat(6001)})).toBe(false);});
  it('accepts a reasoned alternate conclusion and factual retries',()=>{const a=fullAnswers();expect(validateStage(3,{...a,revenueGrowth:'2'})).toEqual([]);expect(readyToSubmit({...a,finalChoice:'digital'},[0,1,2,3,4,5,6,7])).toBe(true);});
 });
@@ -15,6 +15,6 @@ describe('roster and export',()=>{
 });
 
 describe('discussion preparation revision',()=>{
- it('requires an opening contribution and separates the new lesson version',()=>{const a=fullAnswers();expect(LESSON_VERSION).toBe('warby-2024-v2');expect(validateStage(6,{...a,opening:''})).toContain('opening');expect(readyToSubmit({...a,opening:''},[0,1,2,3,4,5,6,7])).toBe(false);expect(validateStage(0,{...a,orientation:'evidence'})).toContain('orientation');});
+ it('requires an opening contribution and separates the new lesson version',()=>{const a=fullAnswers();expect(LESSON_VERSION).toBe('warby-2024-v3');expect(validateStage(6,{...a,opening:''})).toContain('opening');expect(readyToSubmit({...a,opening:''},[0,1,2,3,4,5,6,7])).toBe(false);expect(validateStage(7,{...a,orientation:'evidence'})).toContain('orientation');});
  it('explains every plausible reading and discussion choice separately',()=>{for(const [stage,key] of [[0,'orientation'],[2,'scenario'],[6,'discussionMove'],[7,'transfer']] as const){const texts=checks[key].options.map(([value])=>feedbackFor(stage,{[key]:value}));expect(new Set(texts).size).toBe(checks[key].options.length);expect(texts.every(t=>t.length>100)).toBe(true);}});
 });

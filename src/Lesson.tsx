@@ -1,6 +1,6 @@
 import {useEffect,useRef,useState} from 'react';
 import {learningPages} from './LearningPages';
-import {choiceLabel,required,responseLabels,stages,validateStage,type Answers} from '../shared/lesson';
+import {choiceLabel,INITIAL_POSITION_STAGE,required,responseLabels,stages,validateStage,type Answers} from '../shared/lesson';
 import {checklist} from './case';
 import {Button,CaseDialog,Field,Note,Options} from './components';
 import {download,resetDemo} from './api';
@@ -9,7 +9,7 @@ export default function Lesson({demo}:{demo:boolean}){
  const l=useLearning(demo);const [reference,setReference]=useState(false),[feedback,setFeedback]=useState(false),[invalid,setInvalid]=useState<string[]>([]),[merges,setMerges]=useState<Record<string,string>>({});const heading=useRef<HTMLHeadingElement>(null);
  const {answers:a,stage:s}=l;
  const [cursor,setCursor]=useState({stage:0,page:0});
- const pages=learningPages({s,a,field,options,set:k=>v=>l.update(k,v),initialLocked:!!l.attempt?.checkpoints.includes(1),invalid});
+ const pages=learningPages({s,a,field,options,set:k=>v=>l.update(k,v),initialLocked:!!l.attempt?.checkpoints.includes(INITIAL_POSITION_STAGE),invalid});
  const page=cursor.stage===s?Math.min(cursor.page,pages.length-1):0; const current=pages[page];
  function goPage(p:number){setCursor({stage:s,page:p});setFeedback(false);setInvalid([]);try{localStorage.setItem(`cg.page.${l.attempt?.id}.${s}`,String(p));}catch{}window.scrollTo(0,0);}
  useEffect(()=>{try{const saved=Number(localStorage.getItem(`cg.page.${l.attempt?.id}.${s}`)||0);setCursor({stage:s,page:Math.max(0,Math.min(saved,pages.length-1))});}catch{}},[l.attempt?.id,s]);function set(k:string){return(v:string)=>l.update(k,v);}
@@ -35,7 +35,7 @@ export default function Lesson({demo}:{demo:boolean}){
  <div className="page-progress" aria-label={`Page ${page+1} of ${pages.length}`}><span style={{width:`${(page+1)/pages.length*100}%`}}/></div>
  {feedback?<section className="feedback page-feedback" id="feedback" aria-live="polite">{current.feedback}</section>:<div className="stage-body page-body">{current.body}</div>}
  {invalid.length>0&&<p className="error" role="alert">Complete the highlighted responses and remaining selections. Length requirements make space for reasoning; they do not assess its quality.</p>}
- <footer className="stage-footer page-footer"><div>{feedback?<Button secondary onClick={()=>{setFeedback(false);l.event('retry');window.scrollTo(0,0);}}>Revise my response</Button>:<Button secondary disabled={page===0||l.busy} onClick={()=>goPage(page-1)}>Back</Button>}</div><Button disabled={l.busy||!!l.conflict} onClick={feedback?next:review}>{feedback?(page===pages.length-1?(s===7?'Submit and finish':'Complete this stage'):'Continue'):current.feedback?'Review my response':page===pages.length-1?'Complete this stage':'Continue'} <span aria-hidden="true">→</span></Button></footer>
+ <footer className="stage-footer page-footer"><div>{feedback?<Button secondary onClick={()=>{setFeedback(false);l.event('retry');window.scrollTo(0,0);}}>Revise my response</Button>:<Button secondary disabled={page===0||l.busy} onClick={()=>goPage(page-1)}>Back</Button>}</div><Button disabled={l.busy||!!l.conflict} onClick={feedback?next:review}>{feedback?(page===pages.length-1?(s===7?'Submit and finish':`Next: ${stages[s+1][0]}`):'Continue'):current.feedback?'Review my response':page===pages.length-1?(s===7?'Submit and finish':`Next: ${stages[s+1][0]}`):'Continue'} <span aria-hidden="true">→</span></Button></footer>
 
  </>}
  </main><footer className="lesson-footer">Case method guide · Study and discuss a case</footer></div><CaseDialog open={reference} onClose={()=>setReference(false)}/></div>;
