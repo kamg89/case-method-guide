@@ -30,4 +30,19 @@ export const challenge:Record<string,{voice:string;text:string;guide:string}>={
  digital:{voice:'An objection from a customer-service perspective',text:'What if fitting and eye exams are the reasons customers trust the business? How will an investment in digital conversion preserve that value rather than assume customers no longer need it?',guide:'A strong response identifies the customer task, explains how channels work together, and names evidence that would favor a store instead.'},
  staged:{voice:'An objection from an operating perspective',text:'Testing can postpone a hard decision. What exactly will you test, what result will trigger investment, and what will you do if the evidence remains mixed?',guide:'A strong response sets a bounded test and a decision rule, while acknowledging the cost of waiting.'},
 };
-export const checklist=`CASE PRACTICE\nA reusable case-method checklist\n\n1. State the task. What decision, evaluation, or explanation is needed?\n2. Identify the objective, constraints, and uncertainty.\n3. Separate reported facts, interpretations, and assumptions.\n4. Choose relevant criteria and compare feasible alternatives.\n5. Use calculations to answer a question. State what they cannot establish.\n6. Make a recommendation and explain its strongest evidence.\n7. Give the best objection a fair hearing. Name what would change your mind.\n8. In discussion, respond to the argument, add evidence, and revise when warranted.\n9. Reflect on what changed and why.\n\nThis standalone exercise is complete. No class follow-up is required.\n`;
+export const checklist=`CASE METHOD GUIDE
+Preparing for a case discussion
+
+1. Identify the task before taking detailed notes. What decision, evaluation or explanation is needed?
+2. Read the opening and ending, then review the structure and exhibits. Form a provisional question.
+3. Reread with a purpose. Locate evidence relevant to that question, including details that challenge your first view.
+4. Keep a claim, its evidence, and its assumption distinct in your notes. Record the section or exhibit so you can find it during discussion.
+5. Compare feasible alternatives against consistent criteria. Explain which criterion should matter most when they conflict.
+6. Use calculations to answer an analytical question. State what their inputs and assumptions allow you to conclude.
+7. Prepare a concise opening contribution. Include your position, strongest evidence and a material uncertainty.
+8. Anticipate a serious objection. Identify what would make you revise your judgment.
+9. Listen for changes to the facts, assumptions or criteria. Build on another contribution rather than replaying a prepared speech.
+10. After discussion, note what changed and why.
+
+The practice exercise is complete. Use this checklist when a future case is assigned.
+`;

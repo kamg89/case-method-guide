@@ -6,7 +6,7 @@ export async function api(action:string,data:Record<string,unknown>={},token=ses
  const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),20000);
  try{const r=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json',...(token?{'x-case-session':token}:{})},body:JSON.stringify({action,...data}),signal:controller.signal});const j=await r.json();if(!r.ok)throw new ApiError(j.error||'The request failed.',r.status);return j;}catch(e){if(e instanceof ApiError)throw e;throw new ApiError('Connection interrupted. Your draft stays on this device. Retry when connected.',0);}finally{clearTimeout(timeout);}
 }
-const demoKey='cg.demo.v1';
+const demoKey=`cg.demo.${LESSON_VERSION}`;
 export async function learnerApi(demo:boolean,action:string,data:Record<string,unknown>={}){
  if(!demo)return api(action,data);
  let a:Attempt;try{a=JSON.parse(localStorage.getItem(demoKey)||'null')||initialAttempt();}catch{a=initialAttempt();}if(a.lesson_version!==LESSON_VERSION)a=initialAttempt();

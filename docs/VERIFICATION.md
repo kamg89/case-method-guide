@@ -1,6 +1,6 @@
 # Verification and timing
 
-Verified October 24, 2026. The 29 automated checks and production build pass. The published instructor dashboard was also checked for roster display, private review saving, and export controls. Tests use synthetic learners; no real student records were imported.
+Verified October 24, 2026. The automated checks and production build pass. The published instructor dashboard was also checked for roster display, private review saving, and export controls. Tests use synthetic learners; no real student records were imported.
 
 ## Checks
 
@@ -14,10 +14,14 @@ Verified October 24, 2026. The 29 automated checks and production build pass. Th
 
 ## Duration
 
-The authoring budget is 3 + 7 + 4 + 7 + 6 + 5 + 5 + 4 = **41 minutes**. A structured pacing review assigns time to reading, calculations, written responses, comparisons and reflection. There is no countdown or minimum time gate. The short pages do not add work beyond the eight stages.
+The authoring budget is 3 + 7 + 4 + 7 + 6 + 5 + 6 + 4 = **42 minutes**. A structured pacing review assigns time to reading, calculations, written responses, comparisons and reflection. There is no countdown or minimum time gate. The short pages do not add work beyond the eight stages.
 
 The mechanical browser walkthrough verifies function, not learner thinking speed. **Actual learner timing is unvalidated until piloted.** Pilot with MBA and EMBA learners, record elapsed/visible estimates alongside participant feedback, and revise the text or prompts if typical completion falls outside 30–45 minutes. Do not represent the suggested duration as a measured student result.
 
 ## Practical limits
 
 Credential possession is not identity verification. Client activity is an estimate and may be incomplete or manipulated. The app cannot prove attention or identify AI authorship. Autosave protects responses only after local storage or server acknowledgment; clearing browser storage can erase unsynced drafts. Another device resumes server-saved responses at stage level. Provider outages, free-tier pausing and quotas can interrupt live sign-in and saving. Written reasoning is not automatically graded.
+
+## Lesson revision 2
+
+The landing page now names the case method explicitly and contains only a definition, purpose and start action, with quiet utility links. The case preview and marketing sections were removed. The lesson adds an opening contribution, more plausible alternatives with choice-specific feedback, more demanding evidence/criteria prompts, and a discussion-preparation checklist. Existing database records and schema are unchanged; a read-only check found no live attempts before the version change.

@@ -1,6 +1,6 @@
-# Case practice
+# A guide to the case method
 
-A standalone introduction to the case method for MBA and EMBA students. Learners make an investment recommendation for Warby Parker, examine evidence, respond to an objection, experience an authored discussion, and finish with a debrief and reflection. No later class activity is required.
+A standalone guide to studying cases and preparing for case discussion, for MBA and EMBA students. Learners make an investment recommendation for Warby Parker, examine evidence, respond to an objection, experience an authored discussion, and finish with a debrief and reflection. No later class activity is required.
 
 - [Open the exercise](https://kamg89.github.io/case-method-guide/)
 - [Try the demonstration](https://kamg89.github.io/case-method-guide/#demo)
@@ -40,4 +40,4 @@ GitHub Actions runs the tests and production build before deploying `dist/` to G
 - `tests/`: validation, real Postgres behavior through PGlite, API authorization and deployment isolation.
 - `scripts/test-api.mjs`: opt-in live checks using disposable synthetic records.
 
-Designed for about 41 minutes. Actual learner timing remains unvalidated until piloted. This is an independent instructional exercise, with no affiliation with Harvard or Warby Parker. Fonts are distributed under their licenses in `public/licenses/`.
+Designed for about 42 minutes. Actual learner timing remains unvalidated until piloted. This is an independent instructional exercise, with no affiliation with Harvard or Warby Parker. Fonts are distributed under their licenses in `public/licenses/`.
