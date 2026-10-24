@@ -28,6 +28,8 @@ The roster shows not started, in progress, completed, and reviewed states. Open 
 
 Student and instructor codes contain 192 bits of randomness. Only SHA-256 hashes are stored in the database. Sign-in exchanges a code for an expiring session; sessions expire after seven days. The browser keeps the session in session storage and does not put credentials in URLs. Anyone holding a code can use its access: the code identifies a roster entry, not a verified person.
 
+The current login protection permits 30 sign-in attempts per network IP per ten-minute bucket. A large group on one campus network may hit this limit; stagger sign-ins or have students start individually. Do not disable the protection without reviewing an alternative.
+
 For a lost student code, open the record and select **Replace access code**. This revokes old codes and sessions without deleting work. Download the replacement. **Revoke access** blocks further use but retains work.
 
 If the instructor code is lost, use the private local copy first. If it must be replaced, an authorized database administrator must generate a new random code and update the hash on the **existing instructor credential row**. Preserve its ID because cohorts belong to that row. Revoke/delete sessions for that exact credential. Do not create an unrelated instructor row or run a bulk update. Share the new code privately. Never save plaintext credentials in SQL migration files, GitHub issues, Actions variables, or public logs.

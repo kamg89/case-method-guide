@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
 const url=process.env.VITE_API_URL,code=process.env.INSTRUCTOR_CODE;
 assert(url&&code,'Set VITE_API_URL and INSTRUCTOR_CODE in .env.private, which is gitignored.');
+assert.equal(url,'https://apyakpyzoealaxbvhqnn.supabase.co/functions/v1/case-guide','Refusing to test against a different project.');
 async function call(action,data={},token=''){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json',...(token?{'x-case-session':token}:{})},body:JSON.stringify({action,...data})});return {status:r.status,body:await r.json()};}
 const owner=(await call('login',{code})).body.token;assert(owner,'Instructor login failed');
 let cohort;

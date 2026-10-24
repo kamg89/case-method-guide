@@ -1,6 +1,6 @@
 # Verification and timing
 
-Verified October 24, 2026. Tests use synthetic learners; no real student records were imported.
+Verified October 24, 2026. The 29 automated checks and production build pass. The published instructor dashboard was also checked for roster display, private review saving, and export controls. Tests use synthetic learners; no real student records were imported.
 
 ## Checks
 
@@ -9,7 +9,7 @@ Verified October 24, 2026. Tests use synthetic learners; no real student records
 - Live API checks cover separate student records, completion, duplicates, timing, reviews, exports, reopening and revocation. The synthetic cohort is removed afterwards.
 - Deployment tests reject a different project target. The Edge Function checks the dedicated project before creating its database client.
 - Browser walkthrough covers all eight stages, factual and calculation feedback, keyboard-accessible native controls, saved responses, page navigation, case reference access, debrief, reflection and acknowledged completion. The original long stage screens were replaced with short pages and separate feedback screens. On the same browser, reload restores the short-page position.
-- Phone-sized (390 px) and desktop layouts were visually reviewed. Headings receive focus after navigation; native fieldsets, labels, radio groups, selects, tables and a modal dialog provide accessible structure. No drag-only interaction is required. Maroon/white buttons and dark text on warm white were checked for contrast. This is a manual accessibility review, not an independent screen-reader certification.
+- Phone-sized (390 px) and desktop layouts were visually reviewed. Headings receive focus after navigation; native fieldsets, labels, radio groups, selects, tables and a modal dialog provide accessible structure. No drag-only interaction is required. Measured contrast: maroon/white 9.79:1, primary text/warm white 13.56:1, secondary text/warm white 5.56:1. This is a manual accessibility review, not an independent screen-reader certification.
 - The public bundle contains no privileged keys, private instructor/student codes, exports, handbook or screenshots.
 
 ## Duration
