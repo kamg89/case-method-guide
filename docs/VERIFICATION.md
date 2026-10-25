@@ -68,3 +68,27 @@ Removed the assignment-check item and the opening reference to instructor prepar
 Public demo links and the local demo API are removed. The old demo address displays sign-in. The existing instructor credential also opens a server-authorized admin preview; no additional credential, SQL migration, or backend change is required. The preview uses a separate in-memory controller with no student save, activity, or completion requests.
 
 A browser walkthrough advanced through all 75 lesson and feedback screens with no answers and reached the printable checklist. Direct stage/page navigation, return from completion, and all three recommendation objections were checked. Unauthenticated preview requests display sign-in. Regression tests reject student requests carrying forged admin/preview flags and verify that the authorization check creates no learner records. The live API suite passed student separation, all checkpoint requirements, conflicts, duplicates, timing, review, exports, reopening, and code revocation; its synthetic cohort was deleted. Desktop and 390 px layouts were reviewed with no horizontal overflow. All 38 automated tests and the production build pass.
+
+
+## Final teaching and editorial review, October 25, 2026
+
+Reviewed the full narrative, all prompts and alternatives, authored feedback, recommendation branches, exhibits, debrief, and printable takeaway. The narrative and sequence remain intact. Small wording changes make the standard for a defensible judgment explicit before students choose, while preserving the requirement for accurate facts and calculations. The debrief accepts all three investment priorities when supported, without suggesting that every argument is equally strong or that a pilot is always the safest answer.
+
+| Exercise | Purpose of the response |
+|---|---|
+| First reading and decision question | Distinguish understanding the situation from choosing a solution; turn a general concern into a question about an action and objective. |
+| Constraint, uncertainty, and first position | Separate limits from unknowns and record a tentative view that later analysis can test. |
+| Evidence classification and growth calculations | Distinguish facts, interpretations, and assumptions; avoid treating company growth as proof of an investment's return. |
+| Criteria and arguments for each option | Apply concepts to evidence, compare fairly, and consider an alternative before committing to a recommendation. |
+| Opportunity cost and objection | Explain what the choice sacrifices and identify evidence that could weaken it. |
+| Reflection on the initial position | Explain why the analysis supports keeping or changing a view; the original explanation is available beside the prompt. |
+| Opening contribution and simulated exchange | Make an argument others can examine, respond to an inference, and ask a question that advances discussion. |
+| Transfer checks and final reflection | Reuse the preparation process and explain a concept's usefulness and limits in another case. |
+
+The fact category now explicitly includes calculations from supplied figures. The staged-investment prompt asks for an argument on the same basis as the store and digital prompts. Discussion reflection allows clarification as well as revision. Final reflection feedback addresses that reflection's actual task. No response keys, requirements, lesson version, credentials, database, or backend changed.
+
+Rechecked the numerical exhibits, company history, management claims and case-date cutoff against the [2023 annual filing](https://www.sec.gov/Archives/edgar/data/1504776/000150477624000006/wrby-20231231.htm) and its [filing record](https://www.sec.gov/Archives/edgar/data/1504776/000150477624000006/0001504776-24-000006-index.html). The stated figures and calculations agree. The case's investment review and proposals remain explicitly instructional constructions.
+
+Editorial judgment: ready for student use. The questions require case-specific reasoning and serve the stated learning aims. That judgment does not establish measured learning gains, attention, or completion time. The first learner group should still validate the 30–45-minute pacing estimate.
+
+Verification passed: all 38 automated tests and the production build. The revised introduction, fact labels and feedback, comparison prompts, first-position reference, debrief, and reflection feedback were reviewed in the browser. The expandable reference displays the learner's own explanation. Desktop and 390 px layouts remain readable with no horizontal overflow.
