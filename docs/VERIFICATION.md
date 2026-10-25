@@ -14,7 +14,7 @@ Verified October 24, 2026. The automated checks and production build pass. The p
 
 ## Duration
 
-The authoring budget is 3 + 8 + 5 + 7 + 6 + 4 + 6 + 4 = **43 minutes**. A structured pacing review assigns time to reading, calculations, written responses, comparisons and reflection. There is no countdown or minimum time gate. The short pages do not add work beyond the eight stages.
+The authoring budget is 3 + 8 + 5 + 7 + 8 + 4 + 6 + 4 = **45 minutes**. A structured pacing review assigns time to reading, calculations, written responses, comparisons and reflection. There is no countdown or minimum time gate. The short pages do not add work beyond the eight stages.
 
 The mechanical browser walkthrough verifies function, not learner thinking speed. **Actual learner timing is unvalidated until piloted.** Pilot with MBA and EMBA learners, record elapsed/visible estimates alongside participant feedback, and revise the text or prompts if typical completion falls outside 30–45 minutes. Do not represent the suggested duration as a measured student result.
 
@@ -35,3 +35,13 @@ The case is a 949-word original narrative centered on Dave Gilboa. Its decision 
 Regression checks verify this sequence and that the initial-position lock occurs after decision framing, in both the interface and server. The lesson version is `warby-2024-v3`. A read-only check found no live attempts before this revision. No SQL migration is needed.
 
 Revision 3 verification passed: 36 automated tests, production build, a complete browser walkthrough, saved-page/response recovery after reload, and the live API suite with incremental stage responses. The live check confirms that students can enter their first position after reading and that the server rejects later changes to that preserved position. Synthetic test records were deleted. The revised opening was reviewed at desktop and 390 px widths.
+
+## Concepts and prompt clarification, October 25, 2026
+
+The introduction explains learning concepts, frameworks and theories through cases. A short theory page precedes comparison, and the existing written activities apply the resource-based view, an original comparison framework, and opportunity cost. Reflection and the reusable checklist explicitly transfer these ideas to other cases. The case narrative is unchanged.
+
+Prompts distinguish writing a question from writing an explanation. Decision framing asks for one question and no proposed solution. The discussion reply explicitly ends with one question. Constraint, initial position, opening contribution and reflection instructions specify the required output and sequence.
+
+This is a compatible instructional update within lesson version 3: response keys, validation, checkpoints and saved attempts remain unchanged. No database or backend deployment is required. The estimated duration is 45 minutes; learner timing still requires a pilot.
+
+The updated sequence completed in a browser walkthrough. The question-writing and discussion-reply instructions were checked in context. Framework teaching and its application occupy separate short pages. The revised pages were reviewed at 1280 by 720 and 390 px width, and the production build passed. Existing automated checks still cover all response fields and checkpoints.

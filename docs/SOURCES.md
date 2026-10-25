@@ -24,3 +24,9 @@ Broad case-method principles were informed by William Ellet, *The Case Study Han
 Dave Gilboa and Neil Blumenthal's roles as co-founders and co-CEOs, the 2010 online launch, the five-frame/five-day Home Try-On program, the first permanent store in 2013, and the physical/digital tools are verified in the same filing, Item 1 and management/signature sections. The increase from 200 to 237 is a **net increase in year-end store count**, not the number of openings. The filing reports 40 openings in 2023; the narrative does not confuse these figures.
 
 The author also privately reviewed *LePrix: Reinventing How Businesses Source Pre-Loved Luxury*, HBS case 9-526-038, revised August 4, 2026, as an example of professional case presentation. Its text, events, dialogue, business facts, exhibits and illustrations are not reproduced or adapted. The Warby Parker narrative uses an independently written opening, business context and unresolved decision.
+
+## Strategy teaching additions
+
+The short resource-based view introduction draws on Jay Barney, "Firm Resources and Sustained Competitive Advantage," *Journal of Management*, 17, 1991, pp. 99–120, [doi:10.1177/014920639101700108](https://doi.org/10.1177/014920639101700108). It introduces the distinction between a useful resource and evidence of a lasting advantage. The Warby Parker applications are instructional interpretations, not findings reported by the paper.
+
+The customer value/capabilities/economics comparison framework is an original teaching tool, not a named comprehensive theory. Opportunity cost uses its standard meaning, the value of the best alternative forgone. The activities ask learners to apply these ideas and identify limitations, then transfer a lesson to another case.

@@ -64,12 +64,12 @@ Preparing for a case discussion
 2. Read the opening and ending, then review the structure and exhibits. Form a provisional question.
 3. Reread with a purpose. Locate evidence relevant to that question, including details that challenge your first view.
 4. Keep a claim, its evidence, and its assumption distinct in your notes. Record the section or exhibit so you can find it during discussion.
-5. Compare feasible alternatives against consistent criteria. Explain which criterion should matter most when they conflict.
+5. Choose a relevant concept, framework or theory from the course. Use it to ask questions of the evidence, and state what it cannot establish. Compare options against consistent criteria.
 6. Use calculations to answer an analytical question. State what their inputs and assumptions allow you to conclude.
 7. Prepare a concise opening contribution. Include your position, strongest evidence and a material uncertainty.
 8. Anticipate a serious objection. Identify what would make you revise your judgment.
 9. Listen for changes to the facts, assumptions or criteria. Build on another contribution rather than replaying a prepared speech.
-10. After discussion, note what changed and why.
+10. After discussion, note what changed and why. Record an idea you can use in another case and a limit to its use.
 
 The practice exercise is complete. Use this checklist when a future case is assigned.
 `;

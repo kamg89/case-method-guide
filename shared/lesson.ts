@@ -5,7 +5,7 @@ export const stages = [
   ['Read the case','Meet the decision maker and understand the situation',8],
   ['Find the decision','Turn the situation into a question',5],
   ['Work with evidence','Separate what is known from what is inferred',7],
-  ['Compare the options','Decide what matters and weigh the alternatives',6],
+  ['Compare the options','Apply strategy ideas to weigh the alternatives',8],
   ['Test your argument','Respond to a serious objection',4],
   ['Join the discussion','Prepare a contribution and respond to others',6],
   ['Take stock','Review what you learned and finish',4],
@@ -34,7 +34,7 @@ export const checks = {
  ],feedback:{
  summarize:'A short summary helps you retrieve facts, but chronology does not tell you which facts bear on the decision. First identify the question your analysis must answer, then use the summary selectively.',
  investigate:'This gives the second reading a purpose while keeping the first explanation open to challenge. A provisional question directs attention; contrary evidence helps you notice if you framed it too narrowly.',
- commit:'A framework can reveal relationships you missed. Starting with its categories can also steer you toward issues that are easy to classify rather than issues that determine the decision. Establish the task before choosing the tool.',
+ commit:'A framework can reveal relationships you missed. Connect it to the question you need to answer, and use its concepts to examine evidence. If a course assigns a framework, practise applying it to that question and note its limits. Completing categories alone is not an analysis.',
  }},
  scenario:{prompt:'Which question should organize your analysis of this case?',options:[
  ['diagnosis','What explains the decline in gross margin despite revenue growth?'],
