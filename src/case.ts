@@ -57,19 +57,23 @@ export const challenge:Record<string,{voice:string;text:string;guide:string}>={
  digital:{voice:'An objection from a customer-service perspective',text:'What if fitting and eye exams are the reasons customers trust the business? How will an investment in digital conversion preserve that value rather than assume customers no longer need it?',guide:'A strong response identifies the customer task, explains how channels work together, and names evidence that would favor a store instead.'},
  staged:{voice:'An objection from an operating perspective',text:'Testing can postpone a hard decision. What exactly will you test, what result will trigger investment, and what will you do if the evidence remains mixed?',guide:'A strong response sets a bounded test and a decision rule, while acknowledging the cost of waiting.'},
 };
-export const checklist=`CASE METHOD GUIDE
-Preparing for a case discussion
+export const checklist=`A STUDENT'S GUIDE TO PREPARING FOR THE CASE METHOD
+Use this process for each assigned case before class.
 
-1. Identify the task before taking detailed notes. What decision, evaluation or explanation is needed?
-2. Read the opening and ending, then review the structure and exhibits. Form a provisional question.
+BEFORE CLASS
+
+1. Read your instructor's preparation questions, if provided. Identify whether the case calls for a decision, evaluation or explanation.
+2. Read the whole case for the situation. Note the people involved, the stakes, and what remains unresolved. Then write the question your analysis will answer.
 3. Reread with a purpose. Locate evidence relevant to that question, including details that challenge your first view.
 4. Keep a claim, its evidence, and its assumption distinct in your notes. Record the section or exhibit so you can find it during discussion.
 5. Choose a relevant concept, framework or theory from the course. Use it to ask questions of the evidence, and state what it cannot establish. Compare options against consistent criteria.
 6. Use calculations to answer an analytical question. State what their inputs and assumptions allow you to conclude.
 7. Prepare a concise opening contribution. Include your position, strongest evidence and a material uncertainty.
-8. Anticipate a serious objection. Identify what would make you revise your judgment.
+8. Anticipate a serious objection. Identify what would make you revise your judgment. Write one unresolved question to explore with the class.
+
+DURING AND AFTER CLASS
 9. Listen for changes to the facts, assumptions or criteria. Build on another contribution rather than replaying a prepared speech.
 10. After discussion, note what changed and why. Record an idea you can use in another case and a limit to its use.
 
-The practice exercise is complete. Use this checklist when a future case is assigned.
+Arrive with notes you can use to explain your reasoning and locate its evidence. You can be prepared while still having questions or uncertainty.
 `;

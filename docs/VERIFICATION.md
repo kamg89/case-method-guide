@@ -45,3 +45,9 @@ Prompts distinguish writing a question from writing an explanation. Decision fra
 This is a compatible instructional update within lesson version 3: response keys, validation, checkpoints and saved attempts remain unchanged. No database or backend deployment is required. The estimated duration is 45 minutes; learner timing still requires a pilot.
 
 The updated sequence completed in a browser walkthrough. The question-writing and discussion-reply instructions were checked in context. Framework teaching and its application occupy separate short pages. The revised pages were reviewed at 1280 by 720 and 390 px width, and the production build passed. Existing automated checks still cover all response fields and checkpoints.
+
+## Student preparation purpose, October 25, 2026
+
+The title now identifies the audience and purpose: "A student's guide to preparing for the case method." The landing page, opening route, reading and analysis guidance, discussion preparation, debrief, reflection, and completion screen explain that students use this process for each assigned case before class. The downloadable checklist separates preparation from actions during and after discussion. The practice exercise still finishes in the app.
+
+This copy and layout update preserves the case narrative, response keys, checkpoints, lesson version, and database. All 36 automated tests pass. The production build passes. The landing page was reviewed on desktop and at 390 px width with no horizontal overflow, and the completion guidance was checked with an existing synthetic demonstration.

@@ -1,6 +1,6 @@
-# A guide to the case method
+# A student's guide to preparing for the case method
 
-A standalone guide to studying cases and preparing for case discussion, for MBA and EMBA students. Learners make an investment recommendation for Warby Parker, examine evidence, respond to an objection, experience an authored discussion, and finish with a debrief and reflection. No later class activity is required.
+A guide for MBA and EMBA students to prepare each assigned case before class through close reading, analysis, and discussion notes. Learners make an investment recommendation for Warby Parker, examine evidence, respond to an objection, experience an authored discussion, and finish with a debrief and reflection. The practice exercise is complete in the app; students repeat the preparation process for each case in their course.
 
 - [Open the exercise](https://kamg89.github.io/case-method-guide/)
 - [Try the demonstration](https://kamg89.github.io/case-method-guide/#demo)
