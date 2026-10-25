@@ -3,7 +3,7 @@
 A guide for MBA and EMBA students to prepare each assigned case before class through close reading, analysis, and discussion notes. Learners make an investment recommendation for Warby Parker, examine evidence, respond to an objection, experience an authored discussion, and finish with a debrief and reflection. The practice exercise is complete in the app; students repeat the preparation process for each case in their course.
 
 - [Open the exercise](https://kamg89.github.io/case-method-guide/)
-- [Try the demonstration](https://kamg89.github.io/case-method-guide/#demo)
+- [Admin preview](https://kamg89.github.io/case-method-guide/#instructor/preview), using your private instructor code
 - [Instructor sign-in](https://kamg89.github.io/case-method-guide/#instructor/login)
 - [Operating guide](docs/OPERATIONS.md)
 - [Sources and instructional assumptions](docs/SOURCES.md)
@@ -13,7 +13,7 @@ The completion screen asks students to download and print a one-page [case prepa
 
 The eight stages are divided into short pages. Responses save automatically. A roster-linked access code resumes work on another device. Required checkpoints, reflection, and AI disclosure determine completion; no automated grade or instructor approval is needed. AI assistance is allowed with disclosure.
 
-The public repository contains code and original instructional material. Student records and credential hashes live in a separate Supabase project. Private access codes, exports, source attachments, and local configuration are excluded from the repository. The demonstration stores synthetic work only in the browser.
+The public repository contains code and original instructional material. Student records and credential hashes live in a separate Supabase project. Private access codes, exports, source attachments, and local configuration are excluded from the repository. The private admin preview keeps optional trial answers in memory and creates no student records.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open `http://127.0.0.1:4173/case-method-guide/`. Without a backend URL, the demonstration remains available. For live sign-in, set `VITE_API_URL` to the dedicated Edge Function URL in the operating guide. This URL is public configuration, not a secret.
+Open `http://127.0.0.1:4173/case-method-guide/`. A configured backend is required for student sign-in and the private admin preview. Set `VITE_API_URL` to the dedicated Edge Function URL in the operating guide. This URL is public configuration, not a secret.
 
 ```sh
 npm test

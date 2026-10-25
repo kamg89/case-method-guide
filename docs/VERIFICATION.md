@@ -61,3 +61,10 @@ The generated PDF was rendered and visually inspected. Text extraction confirmed
 ## Prior learning clarification, October 25, 2026
 
 Removed the assignment-check item and the opening reference to instructor preparation questions. The checklist now has 11 points. Its concepts item asks students to connect evidence to relevant ideas they have already learned and expect the case and discussion to introduce new ideas. The landing page, introductory route, and theory-page preparation guidance use the same distinction. The regenerated PDF remains one page with 11.5 pt body text; all checklist text passed extraction checks and the rendered page was visually reviewed. All 36 tests and the production build pass.
+
+
+## Private admin preview, October 25, 2026
+
+Public demo links and the local demo API are removed. The old demo address displays sign-in. The existing instructor credential also opens a server-authorized admin preview; no additional credential, SQL migration, or backend change is required. The preview uses a separate in-memory controller with no student save, activity, or completion requests.
+
+A browser walkthrough advanced through all 75 lesson and feedback screens with no answers and reached the printable checklist. Direct stage/page navigation, return from completion, and all three recommendation objections were checked. Unauthenticated preview requests display sign-in. Regression tests reject student requests carrying forged admin/preview flags and verify that the authorization check creates no learner records. The live API suite passed student separation, all checkpoint requirements, conflicts, duplicates, timing, review, exports, reopening, and code revocation; its synthetic cohort was deleted. Desktop and 390 px layouts were reviewed with no horizontal overflow. All 38 automated tests and the production build pass.

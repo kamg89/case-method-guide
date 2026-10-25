@@ -16,6 +16,16 @@ sample-01,Sample Student One
 sample-02,Sample Student Two
 ```
 
+## Preview the whole guide as admin
+
+Use the same private instructor code in `.private/Instructor access.txt`. Enter it at the [main sign-in](https://kamg89.github.io/case-method-guide/#login) to go directly to admin preview, or sign in to the instructor workspace and select **Preview all pages**. There is one admin credential for both purposes.
+
+The preview verifies instructor access through the server's existing instructor-only `cohorts` operation. A student credential, missing/expired session, or changed client-side role label cannot authorize it. The old public `#demo` address now displays sign-in, and all public demo links and the local demo API have been removed.
+
+Use the stage and page selectors to jump anywhere, including the completion screen. **View feedback** opens feedback without an answer. **Recommendation branch**, available in the comparison, challenge, and discussion stages, switches the store, digital, and staged recommendation branches. You may enter optional trial answers; preview responses stay in memory and never create student attempts, completion records, or timing events. Reloading starts a fresh preview. Returning from a hidden tab rechecks access and preserves the preview while authorization remains valid.
+
+Students still use their individual codes and must satisfy the existing server-validated questions, checkpoints, reflection, and disclosure. No database migration or backend change is needed for preview.
+
 ## Review, export and reopen
 
 The roster shows not started, in progress, completed, and reviewed states. Open a student record to see responses, initial/final choices, confidence, stage activity, checkpoint snapshots, feedback/reference activity, and AI disclosure. Instructor notes stay private.
@@ -88,7 +98,7 @@ The dedicated project was created on October 24, 2026 after a fresh quote of **$
 
 As authorized, **Sidecar Classroom was paused** to free the project slot. Its database-backed features remain unavailable while paused. Its tables were not changed or deleted. Restoring it may require freeing another project slot or changing the plan; do not pause this app while students are working without planning for the outage.
 
-Supabase Free projects with low activity over a seven-day period may be paused. Current documentation allows restoring a paused project for up to **one year after pausing**. Resume from its dashboard within that window; do not treat pausing as indefinite archival storage. Export important records and check service availability before assignment. The public site and local demonstration may load while the backend is paused, but sign-in and server saves will be unavailable. No paid upgrade or artificial keep-alive automation has been configured. [Supabase project pausing](https://supabase.com/docs/guides/platform/free-project-pausing)
+Supabase Free projects with low activity over a seven-day period may be paused. Current documentation allows restoring a paused project for up to **one year after pausing**. Resume from its dashboard within that window; do not treat pausing as indefinite archival storage. Export important records and check service availability before assignment. The public landing page may load while the backend is paused, but student sign-in, admin preview authorization, and server saves will be unavailable. No paid upgrade or artificial keep-alive automation has been configured. [Supabase project pausing](https://supabase.com/docs/guides/platform/free-project-pausing)
 
 For support, check Edge Function logs, migration history and the project's security/performance advisors. The public health operation verifies function availability but does not prove database readiness; a synthetic student login/save is a stronger pre-assignment check.
 

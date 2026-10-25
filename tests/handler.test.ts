@@ -45,6 +45,21 @@ beforeAll(async()=>{pg=new PGlite();await pg.exec('create role anon;create role 
 afterAll(async()=>await pg.close());
 it('requires authentication and rejects foreign origins',async()=>{expect((await call('cohorts')).status).toBe(401);const r=await handler(new Request('https://test',{method:'POST',headers:{origin:'https://attacker.example'},body:'{"action":"health"}'}));expect(r.status).toBe(403);});
 it('isolates students and instructors from unauthorized records',async()=>{expect((await call('cohorts',{},student)).status).toBe(403);expect((await call('roster',{cohortId:cohort},secondTeacher)).status).toBe(404);expect((await call('replaceCode',{learnerId:learner},secondTeacher)).status).toBe(404);const r=await call('load',{},student);expect(r.body.attempt.learner_id).toBeUndefined();expect(r.body.name).toBe('Synthetic Student');});
+it('authorizes the preview check only for instructors without creating learner activity',async()=>{
+ const before=(await pg.query<any>('select (select count(*) from cg_attempts)::int as attempts, (select count(*) from cg_events)::int as events')).rows[0];
+ expect((await call('cohorts',{},teacher)).status).toBe(200);
+ expect((await call('cohorts',{role:'instructor',preview:true},student)).status).toBe(403);
+ const after=(await pg.query<any>('select (select count(*) from cg_attempts)::int as attempts, (select count(*) from cg_events)::int as events')).rows[0];
+ expect(after).toEqual(before);
+});
+it('does not let student requests opt out of required answers through preview flags',async()=>{
+ const a=(await call('load',{},student)).body.attempt;
+ for(const fields of [{stage:0,checkpoint:true},{stage:7,checkpoint:true,submit:true}]){
+  const response=await call('save',{revision:a.revision,responses:{},...fields,preview:true,demo:true,role:'instructor'},student);
+  expect(response.status).toBe(400);
+ }
+ expect((await call('load',{},student)).body.attempt.checkpoints).toEqual([]);
+});
 it('rejects skipping, stale saves, missing disclosure, and replay after completion',async()=>{let a=(await call('load',{},student)).body.attempt;const responses=fullAnswers();expect((await call('save',{revision:a.revision,responses,stage:7,checkpoint:true,submit:true},student)).status).toBe(400);
  for(let stage=0;stage<8;stage++){const stageResponses=stage===0?{privacy:responses.privacy}:stage===1?{privacy:responses.privacy,firstRead:responses.firstRead}:responses;const r=await call('save',{revision:a.revision,responses:stageResponses,stage,checkpoint:true},student);expect(r.status).toBe(200);a=r.body.attempt;if(stage===2)expect((await call('save',{revision:a.revision,responses:{...responses,initial:'digital'},stage},student)).status).toBe(400);}
  expect((await call('save',{revision:a.revision-1,responses,stage:7},student)).status).toBe(409);

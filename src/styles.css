@@ -19,3 +19,7 @@
 @media(min-width:901px) and (max-height:850px){.lesson-main{padding-top:26px}.stage-heading{padding-bottom:14px;margin-bottom:20px}.stage-heading h1{font-size:2.25rem;max-width:none}.stage-heading .eyebrow{margin-bottom:10px}.page-progress{margin-top:0;margin-bottom:20px}}
 
 .completion-handout{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:28px 0}.completion-handout>p{font-size:.95rem}.completion-handout .actions{margin:20px 0 14px;flex-wrap:wrap}.completion-handout .hint{font-size:.8rem;margin-bottom:0}.completion-debrief:not([open])>summary{margin-bottom:0}
+
+.preview-banner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 30px;background:#ecefe6;font-size:.78rem;line-height:1.6}.preview-controls{display:grid;grid-template-columns:1fr 1.5fr;gap:10px;padding:12px;background:#f0f1e9;border:1px solid var(--line);margin-bottom:22px}.preview-controls label{font-size:.76rem;font-weight:500}.preview-controls .preview-branch{grid-column:1 / -1}.preview-controls select{margin-top:4px;padding:8px 10px;min-height:40px;font-size:.8rem;width:100%;min-width:0}.preview-controls+section{margin-top:20px}@media(max-width:600px){.preview-controls{grid-template-columns:1fr;padding:14px}.preview-controls label:last-child{grid-column:auto}.preview-banner{padding:12px 20px}.preview-controls select{max-width:100%}}
+
+@media print{.preview-banner,.preview-controls{display:none!important}}
