@@ -57,3 +57,7 @@ This copy and layout update preserves the case narrative, response keys, checkpo
 The completion screen now leads with a prompt to download and print the one-page case preparation checklist. Personal summary and debrief remain available in expandable sections. The PDF and the learning summary share their checklist text through `src/checklist.json`. The PDF generator preserves readable body text and refuses content that would exceed one page.
 
 The generated PDF was rendered and visually inspected. Text extraction confirmed one US Letter page and all 12 points, with 11.5 pt body text. A completed synthetic demonstration displayed the new print prompt, and its download control produced the expected PDF. Desktop and 390 px layouts were reviewed. All 36 existing tests and the production build pass. Completion rules, learner records, lesson version, and the database are unchanged.
+
+## Prior learning clarification, October 25, 2026
+
+Removed the assignment-check item and the opening reference to instructor preparation questions. The checklist now has 11 points. Its concepts item asks students to connect evidence to relevant ideas they have already learned and expect the case and discussion to introduce new ideas. The landing page, introductory route, and theory-page preparation guidance use the same distinction. The regenerated PDF remains one page with 11.5 pt body text; all checklist text passed extraction checks and the rendered page was visually reviewed. All 36 tests and the production build pass.
