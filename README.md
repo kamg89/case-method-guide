@@ -9,6 +9,8 @@ A guide for MBA and EMBA students to prepare each assigned case before class thr
 - [Sources and instructional assumptions](docs/SOURCES.md)
 - [Verification and timing](docs/VERIFICATION.md)
 
+The completion screen asks students to download and print a one-page [case preparation checklist](public/downloads/case-preparation-checklist.pdf). It covers reading, analysis, notes, preparation with teammates, and class discussion.
+
 The eight stages are divided into short pages. Responses save automatically. A roster-linked access code resumes work on another device. Required checkpoints, reflection, and AI disclosure determine completion; no automated grade or instructor approval is needed. AI assistance is allowed with disclosure.
 
 The public repository contains code and original instructional material. Student records and credential hashes live in a separate Supabase project. Private access codes, exports, source attachments, and local configuration are excluded from the repository. The demonstration stores synthetic work only in the browser.

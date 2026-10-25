@@ -1,0 +1,39 @@
+{
+  "title": "Your case preparation checklist",
+  "subtitle": "Print this page. Keep it beside the case as you prepare, and bring it with your notes.",
+  "sections": [
+    {
+      "title": "Read with a purpose",
+      "items": [
+        {"lead": "Check the assignment.", "text": "Read your instructor's questions and instructions. Use them to focus your preparation."},
+        {"lead": "Get the whole situation.", "text": "Preview the opening, ending, headings, and exhibits. Then read the case. Note who is involved, what is at stake, and why action may be needed."},
+        {"lead": "Write the main question.", "text": "Are you choosing an action, explaining a problem, or judging a result? Write the question your analysis needs to answer."}
+      ]
+    },
+    {
+      "title": "Analyze and make useful notes",
+      "items": [
+        {"lead": "Reread for evidence.", "text": "Study the passages and exhibits that answer your question, one issue at a time. Separate facts from interpretations and assumptions. Look for evidence against your first view."},
+        {"lead": "Apply course ideas.", "text": "Use a relevant concept, theory, or framework to explain the evidence. Show how it helps and where it falls short. A framework name alone is not analysis."},
+        {"lead": "Work through the numbers.", "text": "Calculate what matters to the question. Check units, comparisons, and assumptions. Write what each result means and what it cannot establish."},
+        {"lead": "Compare and choose.", "text": "Judge alternatives by the same criteria. Explain your main trade-off, the strongest objection, and what would change your view. For a decision, identify a first action."},
+        {"lead": "Keep notes you can use.", "text": "Record your position, supporting evidence with page or exhibit references, key calculations, and unresolved questions. Write reasons in your own words instead of copying the case."}
+      ]
+    },
+    {
+      "title": "Before class",
+      "items": [
+        {"lead": "Discuss with your teammates.", "text": "Prepare on your own first, then meet before class when collaboration is allowed. Compare reasoning and challenge assumptions. You do not need to agree on one answer."},
+        {"lead": "Practise a short opening.", "text": "State your position, strongest evidence, and an important uncertainty. Be ready to explain your reasoning and ask a useful question. Avoid memorizing a speech."}
+      ]
+    },
+    {
+      "title": "During and after class",
+      "items": [
+        {"lead": "Listen and build on others.", "text": "Answer the question being discussed. Connect your comment to what others said. Challenge ideas respectfully and revise when warranted. Take brief notes so you can keep listening."},
+        {"lead": "Review what you learned.", "text": "After class, record what changed in your thinking and why. Note a course idea you understand better, its limits, and how you could use it in another case."}
+      ]
+    }
+  ],
+  "footer": "Independent handout by Kamyar Goudarzi, based on this exercise and William Ellet, The Case Study Handbook: A Student's Guide, revised edition, Harvard Business Review Press, 2018, chapters 3 and 7. Not a Harvard publication."
+}

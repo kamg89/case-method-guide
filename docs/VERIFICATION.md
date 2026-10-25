@@ -51,3 +51,9 @@ The updated sequence completed in a browser walkthrough. The question-writing an
 The title now identifies the audience and purpose: "A student's guide to preparing for the case method." The landing page, opening route, reading and analysis guidance, discussion preparation, debrief, reflection, and completion screen explain that students use this process for each assigned case before class. The downloadable checklist separates preparation from actions during and after discussion. The practice exercise still finishes in the app.
 
 This copy and layout update preserves the case narrative, response keys, checkpoints, lesson version, and database. All 36 automated tests pass. The production build passes. The landing page was reviewed on desktop and at 390 px width with no horizontal overflow, and the completion guidance was checked with an existing synthetic demonstration.
+
+## Printable final takeaway, October 25, 2026
+
+The completion screen now leads with a prompt to download and print the one-page case preparation checklist. Personal summary and debrief remain available in expandable sections. The PDF and the learning summary share their checklist text through `src/checklist.json`. The PDF generator preserves readable body text and refuses content that would exceed one page.
+
+The generated PDF was rendered and visually inspected. Text extraction confirmed one US Letter page and all 12 points, with 11.5 pt body text. A completed synthetic demonstration displayed the new print prompt, and its download control produced the expected PDF. Desktop and 390 px layouts were reviewed. All 36 existing tests and the production build pass. Completion rules, learner records, lesson version, and the database are unchanged.

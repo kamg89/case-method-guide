@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import {learningPages} from './LearningPages';
 import {choiceLabel,INITIAL_POSITION_STAGE,required,responseLabels,stages,validateStage,type Answers} from '../shared/lesson';
-import {checklist} from './case';
+import {checklist,checklistPdfUrl} from './checklist';
 import {Button,CaseDialog,Field,Note,Options} from './components';
 import {download,resetDemo} from './api';
 import {useLearning} from './useLearning';
@@ -30,7 +30,25 @@ export default function Lesson({demo}:{demo:boolean}){
  <label className="mobile-stage-nav">Go to stage<select value={s} disabled={l.busy||!!l.attempt.completed_at} onChange={e=>l.navigate(Number(e.target.value))}>{stages.map(([title],i)=><option key={title} value={i} disabled={i>Math.max(-1,...l.attempt!.checkpoints)+1}>{i+1}. {title}</option>)}</select></label>
  {l.error&&<div role="alert" className="error">{l.error}{!l.conflict&&<button className="text-button" onClick={()=>l.save()}>Retry save</button>}{l.error.includes('session')&&<a href="#login">Sign in again</a>}</div>}
  {l.conflict&&<section className="conflict" aria-label="Compare recovered work"><h2>Two versions of your work</h2><p>Your draft remains on this device. Compare it with the saved version before continuing.</p>{l.conflict.completed_at?<p>The server has a completed submission. Loading it will close this draft. Download your draft first if you want to keep it.</p>:Object.keys({...a,...l.conflict.responses}).filter(k=>a[k]!==l.conflict!.responses[k]).map(k=><fieldset key={k}><legend>{responseLabels[k]||k}</legend><label><input type="radio" name={`merge-${k}`} checked={merges[k]!=='saved'} onChange={()=>setMerges({...merges,[k]:'local'})}/> This device: {a[k]||'(empty)'}</label><label><input type="radio" name={`merge-${k}`} checked={merges[k]==='saved'} onChange={()=>setMerges({...merges,[k]:'saved'})}/> Saved: {l.conflict!.responses[k]||'(empty)'}</label></fieldset>)}<div className="actions"><Button secondary onClick={()=>download('recovered-draft.json',JSON.stringify(a,null,2),'application/json')}>Download this draft</Button><Button onClick={()=>{const merged={...l.conflict!.responses,...a};for(const k of Object.keys(merged))if(merges[k]==='saved')merged[k]=l.conflict!.responses[k]||'';void l.resolve(merged);}}>Use selected version</Button></div></section>}
- {l.attempt.completed_at?<section className="completion"><div className="completion-mark" aria-hidden="true">✓</div><span className="eyebrow">Exercise complete</span><h1 ref={heading} tabIndex={-1}>You have worked through<br/>a case.</h1><p className="lead">You practised the preparation to do before each case class: read closely, analyze with course concepts, and support a position with evidence. Your practice exercise is complete. Use this process for every assigned case so you arrive ready to explain your reasoning, ask questions, and learn from other views.</p><div className="decision-comparison"><div><small>Your initial position</small><h3>{choiceLabel(a.initial)}</h3><p>Confidence {a.initialConfidence} of 5</p></div><div><small>Your final position</small><h3>{choiceLabel(a.finalChoice)}</h3><p>Confidence {a.finalConfidence} of 5</p></div></div><h2>What you will carry into your next case</h2><p className="student-quote">{a.reflection}</p><p className="hint">Completion records participation in the checkpoints. It is not a grade or a certification of authorship.</p><div className="actions"><Button onClick={()=>download('case-practice-learning-summary.txt',personalSummary())}>Download my learning summary</Button><Button secondary onClick={()=>download('case-method-checklist.txt',checklist)}>Get the reusable checklist</Button></div><details className="completion-debrief"><summary>Read the debrief again</summary><Debrief/></details><a href="#">Return to the start</a></section>:<>
+ {l.attempt.completed_at?<section className="completion">
+ <div className="completion-mark" aria-hidden="true">✓</div>
+ <span className="eyebrow">Exercise complete</span>
+ <h1 ref={heading} tabIndex={-1}>Print your case preparation checklist.</h1>
+ <p className="lead">Download the one-page checklist and print a copy. Keep it beside you while preparing each case, then bring it and your notes to class.</p>
+ <section className="completion-handout" aria-label="Printable case preparation checklist">
+ <p>Use it to guide your reading, analysis, notes, and discussion with teammates before class. It also reminds you how to contribute and reflect afterward.</p>
+ <div className="actions"><a className="button" href={checklistPdfUrl} download="case-preparation-checklist.pdf">Download the checklist (PDF)</a><a href={checklistPdfUrl} target="_blank" rel="noreferrer">Open PDF to print</a></div>
+ <p className="hint">One page. Open the PDF and choose Print. Use Letter paper, or choose Fit for A4.</p>
+ </section>
+ <details className="completion-debrief"><summary>Review my learning summary</summary>
+ <div className="decision-comparison"><div><small>Your initial position</small><h3>{choiceLabel(a.initial)}</h3><p>Confidence {a.initialConfidence} of 5</p></div><div><small>Your final position</small><h3>{choiceLabel(a.finalChoice)}</h3><p>Confidence {a.finalConfidence} of 5</p></div></div>
+ <h2>What you will carry into your next case</h2><p className="student-quote">{a.reflection}</p>
+ <Button secondary onClick={()=>download('case-practice-learning-summary.txt',personalSummary())}>Download my learning summary</Button>
+ </details>
+ <details className="completion-debrief"><summary>Read the debrief again</summary><Debrief/></details>
+ <p className="hint">Your exercise is complete. Printing is a recommendation, not a completion requirement.</p>
+ <a href="#">Return to the start</a></section>:<>
+
  <div className="stage-heading"><div className="eyebrow">{String(s+1).padStart(2,'0')} / 08 · {stages[s][2]} minutes suggested</div><h1 ref={heading} tabIndex={-1}>{feedback?"Review your reasoning":current.title}</h1><p className="stage-subtitle">{stages[s][0]} · Page {page+1} of {pages.length}</p></div>
  <div className="page-progress" aria-label={`Page ${page+1} of ${pages.length}`}><span style={{width:`${(page+1)/pages.length*100}%`}}/></div>
  {feedback?<section className="feedback page-feedback" id="feedback" aria-live="polite">{current.feedback}</section>:<div className="stage-body page-body">{current.body}</div>}

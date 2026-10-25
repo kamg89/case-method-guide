@@ -91,3 +91,9 @@ As authorized, **Sidecar Classroom was paused** to free the project slot. Its da
 Supabase Free projects with low activity over a seven-day period may be paused. Current documentation allows restoring a paused project for up to **one year after pausing**. Resume from its dashboard within that window; do not treat pausing as indefinite archival storage. Export important records and check service availability before assignment. The public site and local demonstration may load while the backend is paused, but sign-in and server saves will be unavailable. No paid upgrade or artificial keep-alive automation has been configured. [Supabase project pausing](https://supabase.com/docs/guides/platform/free-project-pausing)
 
 For support, check Edge Function logs, migration history and the project's security/performance advisors. The public health operation verifies function availability but does not prove database readiness; a synthetic student login/save is a stronger pre-assignment check.
+
+## Updating the printable checklist
+
+Edit `src/checklist.json`, which also supplies the checklist in the downloadable learning summary. Run `python3 scripts/build-checklist.py` with ReportLab installed to regenerate `public/downloads/case-preparation-checklist.pdf`. The script refuses to create content that exceeds one page, preserves 11.5 pt body text, and uses deterministic PDF metadata. Commit the source and PDF together. Normal app builds use the committed PDF and need no Python packages.
+
+After editing, confirm that the PDF has one page and render it for visual inspection. Check that the completion screen's download and open-to-print links resolve under the GitHub Pages base path. The PDF contains no student information and is public. Students choose Print from their PDF viewer; the app does not open a print dialog automatically or require proof of printing.

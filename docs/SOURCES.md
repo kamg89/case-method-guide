@@ -30,3 +30,7 @@ The author also privately reviewed *LePrix: Reinventing How Businesses Source Pr
 The short resource-based view introduction draws on Jay Barney, "Firm Resources and Sustained Competitive Advantage," *Journal of Management*, 17, 1991, pp. 99–120, [doi:10.1177/014920639101700108](https://doi.org/10.1177/014920639101700108). It introduces the distinction between a useful resource and evidence of a lasting advantage. The Warby Parker applications are instructional interpretations, not findings reported by the paper.
 
 The customer value/capabilities/economics comparison framework is an original teaching tool, not a named comprehensive theory. Opportunity cost uses its standard meaning, the value of the best alternative forgone. The activities ask learners to apply these ideas and identify limitations, then transfer a lesson to another case.
+
+## Printable preparation checklist
+
+The one-page student handout uses original wording based on the exercise and broad guidance in Ellet's chapters 3 and 7, especially purposeful reading and analysis on pages 23-28, preparation and study groups on page 97, constructive participation on pages 98-99, and brief in-class notes followed by reflection on page 109. The source book is private and is not included in the repository or PDF. The handout includes a short source credit and is labeled as an independent publication.
